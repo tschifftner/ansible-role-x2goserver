@@ -19,11 +19,12 @@
     update_cache: yes
     cache_valid_time: 0
 
-- name: 'Update cache'
-  apt: update_cache=yes cache_valid_time=86400
+#- name: 'Update cache'
+#  apt: update_cache=yes cache_valid_time=86400
 
 - name: 'Install x2go packages'
   apt:
     name: '{{ item }}'
     state: present
+    install_recommends: yes
   with_items: x2go_packages
