@@ -1,0 +1,14 @@
+---
+x2go_packages:
+ - 'x2goserver'
+x2go_aptkey: 'E1F958385BFE2B6E'
+x2go_apt_repositories:
+  # X2Go Repository (release builds)
+  - 'deb http://packages.x2go.org/debian jessie main'
+  # X2Go Repository (sources of release builds)
+  - 'deb-src http://packages.x2go.org/debian jessie main'
+
+  # X2Go Repository (nightly builds)
+  #- deb http://packages.x2go.org/debian jessie heuler
+  # X2Go Repository (sources of nightly builds)
+  #- deb-src http://packages.x2go.org/debian jessie heuler

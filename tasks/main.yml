@@ -1,0 +1,28 @@
+---
+- name: Import GPG keys
+  command: 'apt-key adv --recv-keys --keyserver keys.gnupg.net E1F958385BFE2B6E'
+  changed_when: False
+
+- name: 'Update cache'
+  apt: update_cache=yes cache_valid_time=86400
+
+- name: 'Install x2go-keyring'
+  apt:
+    name: 'x2go-keyring'
+    state: present
+    update_cache: yes
+
+- name: 'Add x2go repository'
+  apt_repository:
+    repo: "{{ item }}"
+    state: present
+  with_items: x2go_apt_repositories
+
+- name: 'Update cache'
+  apt: update_cache=yes cache_valid_time=86400
+
+- name: 'Install x2go packages'
+  apt:
+    name: '{{ item }}'
+    state: present
+  with_items: x2go_packages
