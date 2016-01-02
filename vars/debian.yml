@@ -1,0 +1,11 @@
+---
+x2go_apt_repositories:
+  # X2Go Repository (release builds)
+  - 'deb http://packages.x2go.org/{{ ansible_distribution|lower }} {{ ansible_distribution_release }} main'
+  # X2Go Repository (sources of release builds)
+  - 'deb-src http://packages.x2go.org/{{ ansible_distribution|lower }} {{ ansible_distribution_release }} main'
+
+  # X2Go Repository (nightly builds)
+  #- deb http://packages.x2go.org/debian jessie heuler
+  # X2Go Repository (sources of nightly builds)
+  #- deb-src http://packages.x2go.org/debian jessie heuler
