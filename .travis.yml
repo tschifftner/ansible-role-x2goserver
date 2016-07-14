@@ -1,12 +1,13 @@
 ---
-language: python
-python: "2.7"
 sudo: required
 dist: trusty
 
+language: python
+python: "2.7"
+
 env:
-  - SITE=test.yml ANSIBLE_VERSION=1.8
-  - SITE=test.yml ANSIBLE_VERSION=1.9.4
+  - SITE=test.yml ANSIBLE_VERSION=latest
+  - SITE=test.yml ANSIBLE_VERSION=2.1.0.0
 
 before_install:
   - sudo apt-get update -qq
@@ -14,7 +15,7 @@ before_install:
 
 install:
   # Install Ansible.
-  - pip install ansible==$ANSIBLE_VERSION
+  - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install --no-binary ansible ansible; else pip install --no-binary ansible ansible==$ANSIBLE_VERSION; fi
 
   # Add ansible.cfg to pick up roles path.
   - "{ echo '[defaults]'; echo 'roles_path = ../'; } >> ansible.cfg"
@@ -39,4 +40,4 @@ script:
   # ansible-lint checks for best practice
   - ansible-lint tests/$SITE
 
-  # @todo Verify phpstorm installation
+  # @todo Verify x2go installation

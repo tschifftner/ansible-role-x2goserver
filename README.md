@@ -1,4 +1,4 @@
-# Ansible Role: PHPStorm
+# Ansible Role: x2goserver
 
 [![Build Status](https://travis-ci.org/tschifftner/ansible-role-x2goserver.svg)](https://travis-ci.org/tschifftner/ansible-role-x2goserver)
 
@@ -7,17 +7,6 @@ Installs x2goserver on Debian/Ubuntu linux servers.
 ## Requirements
 
 None.
-
-## Role Variables
-
-Available variables are listed below, along with default values (see `defaults/main.yml`):
-
-    x2go_packages:
-      - 'x2goserver'
-    x2go_aptkey: 'E1F958385BFE2B6E'
-    x2go_apt_repositories:
-      - 'deb http://packages.x2go.org/debian jessie main'
-      - 'deb-src http://packages.x2go.org/debian jessie main'
 
 ## Dependencies
 
@@ -29,10 +18,16 @@ None.
       roles:
         - { role: tschifftner.x2goserver }
 
+## Supported OS
+
+Ansible          | Debian Jessie    | Ubuntu 14.04    | Ubuntu 12.04
+:--------------: | :--------------: | :-------------: | :-------------: 
+2.1              | Yes              | Yes             | Yes
+
 ## License
 
 MIT / BSD
 
 ## Author Information
 
- - Tobias Schifftner, @tschifftner
+ - [Tobias Schifftner](https://twitter.com/tschifftner), [ambimax® GmbH](https://www.ambimax.de)
