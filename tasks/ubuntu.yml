@@ -20,11 +20,11 @@
   apt_repository:
     repo: "{{ item }}"
     state: present
-  with_items: x2go_apt_repositories
+  with_items: '{{ x2go_apt_repositories }}'
 
 - name: 'Install x2go packages'
   apt:
     name: '{{ item }}'
     state: present
     install_recommends: yes
-  with_items: x2go_apt_packages
+  with_items: '{{ x2go_apt_packages }}'
