@@ -42,4 +42,4 @@ script:
   # ansible-lint checks for best practice
   - ansible-lint tests/$SITE
 
-  # @todo Verify x2go installation
+  - service x2goserver status | grep running
