@@ -21,6 +21,6 @@
 - name: 'Install x2go packages'
   apt:
     name: '{{ item }}'
-    state: build-dep
+    state: present
     install_recommends: yes
   with_items: '{{ x2go_apt_packages }}'
